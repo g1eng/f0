@@ -13,10 +13,12 @@ let con = new F0({
     hostname: "https://api.example.com",
 })
 const response = con.get("/category/list").json()
-console.log(response)
-// { some:json, like:this}
-console.log(con.jsonBody)
-// { some:json, like:this}
+setTimeout(()=>{
+    console.log(response)
+    // { some:json, like:this}
+    console.log(con.jsonBody)
+    // { some:json, like:this}
+},5000)
 ```
 
 # Basic usage
@@ -24,7 +26,7 @@ console.log(con.jsonBody)
 make a new connection and get a json response
 
 ```javascript
-const {F0} = require("../../dist/node-f0")
+const {F0} = require("path/to/node-f0")
 
 let con = new F0()
 con.setHost("https://api.github.com")
@@ -65,14 +67,16 @@ for (let i in awesomeResourceList) {
     configList[i].resource = awesomeResourceList[i]
 }
 
-function sendRequestRecursive(seq){
+function sendRequestRecursive(seq=0){
+    let f = new F0(configList[seq++])
+    f.get()
     setTimeout(()=>{
-        let f = new F0(configList[seq++])
-        f.get()
         if (seq < configList.length)
             sendRequest(seq)
     },1000)
 }
+
+sendRequestRecursive()
 ```
 
 
