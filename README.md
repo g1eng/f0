@@ -21,6 +21,10 @@ setTimeout(()=>{
 },5000)
 ```
 
+# Install
+
+WIP
+
 # Basic usage
 
 make a new connection and get a json response
