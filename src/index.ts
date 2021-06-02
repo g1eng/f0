@@ -82,14 +82,21 @@ class F0 {
     }
 
     /**
+     * Set a header for the request
+     * @param headerName
+     * @param headerValue
+     */
+    setHeader(headerName: string, headerValue: string){
+        this.config.options.headers[headerName] = headerValue
+    }
+
+    /**
      * Set resource to fetch
      * @this F0
      * @param {undefined|String} resource path to access (e.g. /api/resource )
      */
     setResource(resource: undefined | string){
-        if (typeof resource === "undefined"){
-            this.config.resource = "/"
-        } else {
+        if (typeof resource !== "undefined"){
             this.config.resource = resource
         }
     }
