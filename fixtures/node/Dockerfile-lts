@@ -1,0 +1,7 @@
+FROM node:lts-buster
+LABEL="testing"
+ADD . /
+ADD ../package.json /
+ADD ../src /src
+WORKDIR /
+RUN npm install

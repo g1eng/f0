@@ -1,0 +1,45 @@
+{
+  "name": "f0",
+  "version": "0.0.001",
+  "description": "tiny and simple http client using fetch",
+  "main": "dist/f0.js",
+  "module": "dist/node-f0.js",
+  "scripts": {
+    "start": "node fixtures/node/run.js",
+    "open": "firefox fixtures/browser/client.html",
+    "build": "webpack build && tsc",
+    "test": "tsc && jest"
+  },
+  "private": true,
+  "keywords": [
+    "fetch",
+    "ajax",
+    "premise",
+    "rest"
+  ],
+  "author": "Nomura Suzume <suzume315@g00.g1e.org>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.1",
+    "@types/webpack": "^5.28.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.27.0",
+    "jest": "^27.0.3",
+    "jest-config": "^27.0.3",
+    "node-fetch": "^2.6.1",
+    "selenium-webdriver": "*",
+    "ts-jest": "^27.0.2",
+    "ts-loader": "^9.2.2",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  }
+}

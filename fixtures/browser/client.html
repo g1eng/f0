@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>run f0</title>
+    <script src="../../dist/f0.js"></script>
+    <style>
+        html { background: black; color: #ddd}
+        div,table { text-align: center; margin-left: auto; margin-right: auto; }
+        input { width: 3rem; }
+    </style>
+</head>
+<body>
+<div>
+    <h1>f0 demo</h1>
+    <label>
+        Status code to expect
+        <input id="status_input" type="number" min="200" max="550" value="200" />
+    </label>
+    <table>
+        <tr>
+            <td>
+                <button onclick="f.get('/get').json()" > get </button>
+            </td>
+            <td>
+                <button onclick="f.post('/post').json()" > post </button>
+
+            </td>
+            <td>
+                <button onclick="f.put('/put').json()" > put </button>
+            </td>
+            <td>
+                <button onclick="f.delete('/delete').json()" > delete </button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="f.post('/post','bodyCompoundMaterial').json()" > post body </button>
+            </td>
+            <td>
+                <button onclick="f.put('/put','bodyCompoundMaterial').json()" > put body </button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<script>
+    let f = new F0()
+    let i = 0;
+    f.setHost("http://htb.testing.local")
+    setInterval(()=>{
+        if (f.response !== undefined) {
+            let code = document.getElementById("status_input").valueAsNumber
+            console.log(f.method + ": " + i, f)
+            console.log("res: " + i++, f.jsonBody)
+            f.hasStatus(code).then(()=>{
+                notifySuccess(i, code)
+                f.flush()
+            }).catch(()=>{
+                notifyFailure(i, code)
+                f.flush()
+            })
+        }
+    },1000)
+
+    function notifySuccess(i, code){
+        let msg =
+            `${f.method}: ${i}\n` +
+            `status is ${code.toString()}`
+        alert(msg)
+    }
+    function notifyFailure(i, code){
+        let msg =
+            `${f.method}: ${i}\n` +
+            `status not matched.\n` +
+            `actually: ${f.response.status}\n` +
+            `expected: ${code.toString()}`
+        alert(msg)
+    }
+
+</script>
+</body>
+</html>

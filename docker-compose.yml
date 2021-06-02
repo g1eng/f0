@@ -1,0 +1,22 @@
+version: 3.1
+services:
+  httpbin:
+    build:
+      context: "fixtures/httpbin"
+    networks:
+      testnet:
+        - htb.testing.local
+  lts:
+    restart: on-failure
+    command: "npm run test"
+    healthcheck:
+      test:
+    build:
+      context: "fixtures/node"
+      dockerfile: "Dockerfile-lts"
+    networks:
+      testnet:
+        - lts.node.local
+networks:
+  testnet:
+    iternal: true
