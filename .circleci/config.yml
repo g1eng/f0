@@ -15,6 +15,8 @@ jobs:
           name: run test
           command: npm run test
       - run:
+          name: remove unused coverage files
+          command: bash -c "rm -rv ./coverage/{clover.xml,coverage-final.json,lcov-report}"
+      - run:
           name: uploade coverage to codecov
-          command: |
-            npx jest --ci --coverage --forceExit && npx codecov
+          command: npx codecov
