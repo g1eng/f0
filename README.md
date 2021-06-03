@@ -4,7 +4,7 @@
 
 ****
 
-**F0** is a tiny library to make http request, get response and hold the response object for in a instance.
+**F0** is a tiny library to make http request, get response and hold the response object in a instance.
 It uses fetch API for any requests and written in TypeScript.
 
 You can generate a F0 instance and hold any of Premises, results and result json inside it.
@@ -25,7 +25,12 @@ setTimeout(()=>{
 
 # Install
 
-WIP
+This package is released under experimental state.
+If you want to try it, install the package with npm:
+
+```
+npm install f0.js
+```
 
 # Basic usage
 
