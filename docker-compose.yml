@@ -5,7 +5,8 @@ services:
       context: "fixtures/httpbin"
     networks:
       testnet:
-        - htb.testing.local
+        aliases:
+          - htb.testing.local
   lts:
     restart: on-failure
     command: "npm run test"
@@ -13,7 +14,9 @@ services:
       dockerfile: "Dockerfile-lts"
     networks:
       testnet:
-        - lts.node.local
+        aliases:
+          - lts.node.local
 networks:
   testnet:
+    name: testnet
     internal: true
