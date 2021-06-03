@@ -1,6 +1,6 @@
 # Tiny and Simple HTTP client using fetch
 
-[![codecov](https://codecov.io/gh/g1eng/f0/branch/master/graph/badge.svg?token=4FM7BIA7PE)](https://codecov.io/gh/g1eng/f0)
+[![Coverage Status](https://coveralls.io/repos/github/g1eng/f0/badge.svg?branch=master)](https://coveralls.io/github/g1eng/f0?branch=master)
 
 ****
 
