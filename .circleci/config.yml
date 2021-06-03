@@ -1,10 +1,16 @@
+version: 2.1
+orbs:
+  coveralls: coveralls/coveralls@1.0.6
+  node: circleci/node@4.5.0
+
 jobs:
   build:
-    docker:
-      - image: cimg/node:16.2.0
-    resource_class: small
+    executor: 
+      name: node/default
+
     steps:
       - checkout
+
       - run:
           name: install dependencies
           command: npm install && npm install --save-dev
@@ -14,10 +20,16 @@ jobs:
       - run:
           name: run test
           command: npm run test
-      - run:
-          - store_artifacts:
-              path: coverage
+      - store_artifacts:
+          path: coverage
       - coveralls/upload:
+          flag_name: main
+          verbose: true
       - run:
           name: uploade coverage to codecov
           command: bash <(curl -s https://codecov.io/bash) -v
+
+workflows:
+  build-and-report:
+    jobs: 
+      - build
