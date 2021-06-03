@@ -1,6 +1,6 @@
 {
   "name": "f0",
-  "version": "0.0.001",
+  "version": "0.0.01",
   "description": "tiny and simple http client using fetch",
   "main": "dist/f0.js",
   "module": "dist/node-f0.js",
