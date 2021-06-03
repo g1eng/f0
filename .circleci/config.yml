@@ -14,9 +14,8 @@ jobs:
       - run:
           name: run test
           command: npm run test
-      - run:
-          - store_artifacts:
-              path: coverage
+      - store_artifacts:
+          path: coverage
       - run:
           name: uploade coverage to codecov
           command: bash <(curl -s https://codecov.io/bash) -v
