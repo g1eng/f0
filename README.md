@@ -1,5 +1,7 @@
 # Tiny and Simple HTTP client using fetch
 
+[![codecov](https://codecov.io/gh/g1eng/f0/branch/master/graph/badge.svg?token=4FM7BIA7PE)](https://codecov.io/gh/g1eng/f0)
+
 ****
 
 **F0** is a tiny library to make http request, get response and hold the response object for in a instance.
