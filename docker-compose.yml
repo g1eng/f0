@@ -1,11 +1,12 @@
 version: "3.5"
 services:
-  httpbin:
-    image: "kennethreitz/httpbin"
-    networks:
-      testnet:
-        aliases:
-          - htb.testing.local
+#  httpbin:
+#    build:
+#      context: "fixtures/httpbin"
+#    networks:
+#      testnet:
+#        aliases:
+#          - htb.testing.local
   lts:
     restart: on-failure
     command: "npm run test"
@@ -21,4 +22,3 @@ services:
 networks:
   testnet:
     name: testnet
-    internal: true

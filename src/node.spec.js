@@ -1,6 +1,6 @@
 const F0 = require('./index.js')
 
-const testbin = "http://htb.testing.local"
+const testbin = "https://89e20210fd4c5440daf166b2d1c2bcc5.m.pipedream.net"
 
 describe('F0', ()=>{
     beforeEach(()=>{
