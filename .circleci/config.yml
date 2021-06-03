@@ -17,4 +17,4 @@ jobs:
       - run:
           name: uploade coverage to codecov
           command: |
-            jest --ci --coverage --forceExit && codecov
+            npx jest --ci --coverage --forceExit && npx codecov
