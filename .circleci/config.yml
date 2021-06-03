@@ -4,13 +4,12 @@ jobs:
       - image: cimg/base:2021.05
     steps:
       - checkout
-      - run: 
-          name: start test compose stack
-          command: | 
-            docker-compose up -d
       - run:
-          name: copy coverage files
-          command: docker-compose copy lts:/pkg/coverage ./coverage
+          name: install dependencies
+          command: npm install
+      - run:
+          name: run test
+          command: npm run test
       - run:
           name: uploade coverage to codecov
           command: |
