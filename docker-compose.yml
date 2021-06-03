@@ -1,22 +1,24 @@
-version: 3.5
+version: "3.5"
 services:
-  httpbin:
-    build:
-      context: "fixtures/httpbin"
-    networks:
-      testnet:
-        - htb.testing.local
+#  httpbin:
+#    build:
+#      context: "fixtures/httpbin"
+#    networks:
+#      testnet:
+#        aliases:
+#          - htb.testing.local
   lts:
     restart: on-failure
     command: "npm run test"
-    healthcheck:
-      test:
+#    depends_on:
+#      - httpbin
     build:
-      context: "fixtures/node"
+      context: "."
       dockerfile: "Dockerfile-lts"
     networks:
       testnet:
-        - lts.node.local
+        aliases:
+          - lts.node.local
 networks:
   testnet:
-    iternal: true
+    name: testnet

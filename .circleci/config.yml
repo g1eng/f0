@@ -1,0 +1,20 @@
+jobs:
+  build:
+    docker:
+      - image: cimg/node:16.2.0
+    resource_class: small
+    steps:
+      - checkout
+      - run:
+          name: install dependencies
+          command: npm install
+      - run:
+          name: run test
+          command: npm run build
+      - run:
+          name: run test
+          command: npm run test
+      - run:
+          name: uploade coverage to codecov
+          command: |
+            bash <(curl -s https://codecov.io/bash) 
