@@ -17,4 +17,4 @@ jobs:
       - run:
           name: uploade coverage to codecov
           command: |
-            bash <(curl -s https://codecov.io/bash) 
+            jest --ci --coverage --forceExit && codecov
