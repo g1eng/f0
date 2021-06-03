@@ -9,10 +9,7 @@ services:
   lts:
     restart: on-failure
     command: "npm run test"
-    healthcheck:
-      test:
     build:
-      context: "fixtures/node"
       dockerfile: "Dockerfile-lts"
     networks:
       testnet:
