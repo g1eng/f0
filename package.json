@@ -29,6 +29,7 @@
     "@typescript-eslint/parser": "^4.26.0",
     "babel-loader": "^8.2.2",
     "codecov": "^3.8.2",
+    "coveralls": "^3.1.0",
     "eslint": "^7.27.0",
     "jest": "^27.0.3",
     "jest-config": "^27.0.3",
