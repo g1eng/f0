@@ -4,13 +4,8 @@ jobs:
       - image: cimg/base:2021.05
     steps:
       - checkout
-      # Whatever you want to do
       - run: 
-          name: initialize
-          command: | 
-            sudo apt-get update && sudo apt-get upgrade -y
-      - run: 
-          name: start test stack
+          name: start test compose stack
           command: | 
             docker-compose up -d
       - run:
