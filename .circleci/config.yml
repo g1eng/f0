@@ -1,0 +1,22 @@
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2021.05
+    steps:
+      - checkout
+      # Whatever you want to do
+      - run: 
+          name: initialize
+          command: | 
+            sudo apt-get update && sudo apt-get upgrade -y
+      - run: 
+          name: start test stack
+          command: | 
+            docker-compose up -d
+      - run:
+          name: copy coverage files
+          command: docker-compose copy lts:/pkg/coverage ./coverage
+      - run:
+          name: uploade coverage to codecov
+          command: |
+            bash <(curl -s https://codecov.io/bash) 
