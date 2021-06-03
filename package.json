@@ -8,7 +8,7 @@
     "start": "node fixtures/node/run.js",
     "open": "firefox fixtures/browser/client.html",
     "build": "webpack build && tsc",
-    "test": "tsc && jest --coverage --forceExit"
+    "test": "tsc && jest --collectCoverage=true --forceExit"
   },
   "keywords": [
     "fetch",
