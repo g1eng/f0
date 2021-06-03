@@ -1,8 +1,7 @@
 version: "3.5"
 services:
   httpbin:
-    build:
-      context: "fixtures/httpbin"
+    image: "kennethreitz/httpbin"
     networks:
       testnet:
         aliases:
@@ -10,6 +9,8 @@ services:
   lts:
     restart: on-failure
     command: "npm run test"
+    depends_on:
+      - httpbin
     build:
       context: "."
       dockerfile: "Dockerfile-lts"
