@@ -18,11 +18,5 @@ jobs:
           - store_artifacts:
               path: coverage
       - run:
-          name: merge coverage files for codecov
-          command: bash -c "for i in ./coverage/{clover.xml,lcov-report}; do cat $i >> covarage.txt ; echo '<<<<<< EOF' >> coverage.txt; done"
-      - run:
-          name: remove original coverage files
-          command: bash -c "rm -rv ./coverage"
-      - run:
           name: uploade coverage to codecov
-          command: npx codecov
+          command: bash <(curl -s https://codecov.io/bash) -v
