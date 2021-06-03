@@ -10,8 +10,8 @@ services:
   lts:
     restart: on-failure
     command: "npm run test"
-    depends_on:
-      - httpbin
+#    depends_on:
+#      - httpbin
     build:
       context: "."
       dockerfile: "Dockerfile-lts"
