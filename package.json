@@ -8,7 +8,7 @@
     "start": "node fixtures/node/run.js",
     "open": "firefox fixtures/browser/client.html",
     "build": "webpack build && tsc",
-    "test": "tsc && jest --coverage"
+    "test": "tsc && jest --coverage --detectOpenHandles"
   },
   "keywords": [
     "fetch",
