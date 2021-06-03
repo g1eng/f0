@@ -32,7 +32,7 @@ WIP
 make a new connection and get a json response
 
 ```javascript
-const {F0} = require("path/to/node-f0")
+const {F0} = require("f0.js/dist/node-f0")
 
 let con = new F0()
 con.setHost("https://api.github.com")
