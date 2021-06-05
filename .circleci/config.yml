@@ -14,8 +14,8 @@ jobs:
       - run:
           name: check webdriver install
           command: |
-            chrome --version
             chromedriver --version
+            geckodriver --version
       - run:
           name: install dependencies
           command: npm install && npm install --save-dev
