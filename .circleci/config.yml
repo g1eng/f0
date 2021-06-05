@@ -11,9 +11,15 @@ jobs:
 
     steps:
       - checkout
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - browser-tools/install-firefox
+      - browser-tools/install-geckodriver
       - run:
           name: check webdriver install
           command: |
+            google-chrome --version
+            firefox --version
             chromedriver --version
             geckodriver --version
       - run:
