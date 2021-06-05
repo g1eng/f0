@@ -1,6 +1,8 @@
 'use strict';
 // @ts-ignore
-const fetch = require('node-fetch')
+typeof require === "function" ?
+    require("node-fetch") :
+    true
 
 interface F0Config {
     hostname: string
