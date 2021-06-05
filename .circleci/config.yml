@@ -12,10 +12,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: check webdriver install
           command: |
-            google-chrome --version
+            chrome --version
             chromedriver --version
-          name: Check install
       - run:
           name: install dependencies
           command: npm install && npm install --save-dev
