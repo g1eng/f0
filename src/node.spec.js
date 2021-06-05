@@ -1,4 +1,4 @@
-const F0 = require('./index.js')
+const {F0} = require('../dist/node-f0')
 
 const testbin = "https://89e20210fd4c5440daf166b2d1c2bcc5.m.pipedream.net"
 

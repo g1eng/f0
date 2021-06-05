@@ -1,8 +1,7 @@
 'use strict';
 // @ts-ignore
-typeof require === "function" ?
-    require("node-fetch") :
-    true
+const fetch = typeof fetch === "function" ?
+    fetch : require("node-fetch")
 
 interface F0Config {
     hostname: string
@@ -305,6 +304,8 @@ class F0 {
         return this.fetch?.then(() => {
             if (this.response?.status !== code) throw new Error("")
             return true
+        }).catch(()=>{
+            return false
         })
     }
 
