@@ -20,26 +20,26 @@
     <table>
         <tr>
             <td>
-                <button onclick="f.get('/get').json()" > get </button>
+                <button id="get" onclick="f.get('/get').json()" > get </button>
             </td>
             <td>
-                <button onclick="f.post('/post').json()" > post </button>
+                <button id="post" onclick="f.post('/post').json()" > post </button>
 
             </td>
             <td>
-                <button onclick="f.put('/put').json()" > put </button>
+                <button id="put" onclick="f.put('/put').json()" > put </button>
             </td>
             <td>
-                <button onclick="f.delete('/delete').json()" > delete </button>
+                <button id="delete" onclick="f.delete('/delete').json()" > delete </button>
             </td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <button onclick="f.post('/post','bodyCompoundMaterial').json()" > post body </button>
+                <button id="post_body" onclick="f.post('/post','bodyCompoundMaterial').json()" > post body </button>
             </td>
             <td>
-                <button onclick="f.put('/put','bodyCompoundMaterial').json()" > put body </button>
+                <button id="put_body" onclick="f.put('/put','bodyCompoundMaterial').json()" > put body </button>
             </td>
             <td></td>
         </tr>
